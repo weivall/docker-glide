@@ -1,3 +1,5 @@
 FROM golang:1.8.1-alpine
-RUN curl https://glide.sh/get | sh
+RUN apk --update add curl && \
+    curl https://glide.sh/get | sh && \
+    apk del curl
 
